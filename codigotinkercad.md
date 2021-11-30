@@ -120,7 +120,7 @@ void loop()
   lcd.clear();
   
   
-  //Sensor de luminosidade
+  //Sensor de Gás
   int bin;
   double tensao, res, lum;
   bin = analogRead(A1);
@@ -129,13 +129,9 @@ void loop()
   lum = pow(10,5-log10(res));
   //Mostrando no LCD
   lcd.setCursor(0,0);
-  lcd.print("Lum(lux):");
+  lcd.print("Nenhum gas detectado");
   lcd.setCursor(0,1);
-  lcd.print(lum,1);
-  //Mostrando no Monitor Serial
-  Serial.print("\nLuminosidade(Lux) = ");
-  Serial.print(lum,1);
-  Serial.println("\n****************");
+  lcd.print(lum,1);  
   
   //Aguarda um segundo
   delay(3000);
